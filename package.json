@@ -1,5 +1,5 @@
 {
-  "name": "@rf/utils",
+  "name": "@randomlyfish/utils",
   "version": "0.1.0",
   "description": "A set of utility classes",
   "main": "index.js",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/RandomlyFish/utils/issues"
   },
-  "homepage": "https://github.com/RandomlyFish/utils#readme"
+  "homepage": "https://github.com/RandomlyFish/utils#readme",
+  "keywords": [
+    "utils",
+    "utility",
+    "client",
+    "server"
+  ]
 }
