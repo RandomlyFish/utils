@@ -40,18 +40,37 @@ module.exports.replace = (string, find, replaceWith) => {
 }
 
 /** 
+ * Returns a string upto another string
+ * @param {string} string - The string to use as a source
+ * @param {string} upto - Removes any part of the string after and including this
+ */
+module.exports.getUpTo = (string, upTo) => {
+    if (string.indexOf(upTo) >= 0) {
+        string = string.substr(0, string.indexOf(upTo));
+    }
+    return string;
+}
+
+/** 
  * Returns a string between two strings
  * @param {string} string - The string to use as a source
- * @param {string} after - Returns the string after this
- * @param {string} upto - Returns the string upto this
+ * @param {string} after - Removes any part of the string up to and including this
+ */
+module.exports.getAfter = (string, after) => {
+    if (string.indexOf(after) >= 0) {
+        string = string.substr(string.indexOf(after) + after.length);
+    }
+    return string;
+}
+
+/** 
+ * Returns a string between two strings
+ * @param {string} string - The string to use as a source
+ * @param {string} after - Removes any part of the string up to and including this
+ * @param {string} upto - Removes any part of the string after and including this
  */
 module.exports.getBetween = (string, after, upto) => {
-    if (string.indexOf(after) >= 0) {
-        string = string.substring(string.indexOf(after) + after.length);
-    }
-    if (string.indexOf(upto) >= 0) {
-        string = string.substring(0, string.indexOf(upto));
-    }
-
+    string = this.getAfter(string, after);
+    string = this.getUpTo(string, upto);
     return string;
 }
