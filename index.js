@@ -1,0 +1,1 @@
+// index.js is required as it is the entry point for the package

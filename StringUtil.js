@@ -1,11 +1,10 @@
-export default class StringUtil {
-
+module.exports = {
     /**
      * Checks if a string contains any of the provided strings
      * @param {string} string 
-     * @param {strings} strings 
+     * @param {string[]} strings 
      */
-    static containsAny(string = "", strings = []) {
+    containsAny: (string = "", strings = []) => {
         for (let i = 0; i < strings.length; i++) {
             if (string.indexOf(strings[i]) >= 0) {
                 return true;
@@ -13,7 +12,7 @@ export default class StringUtil {
         }
 
         return false;
-    }
+    },
 
     /** 
      * Replaces all occurances of a string inside a string with another
@@ -21,7 +20,7 @@ export default class StringUtil {
      * @param {string} find - The string to replace
      * @param {string} replaceWith - The string which will replace the found strings
      */
-    static replace(string, find, replaceWith) {
-        return string.split(from).join(to);
+    replace: (string, find, replaceWith) => {
+        return string.split(find).join(replaceWith);
     }
-}
+};
